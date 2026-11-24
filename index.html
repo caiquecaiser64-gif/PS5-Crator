@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#020816">
+  <title>PS5 Creator</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Tela de inicialização -->
+  <section id="splash" class="screen active">
+    <div class="glow"></div>
+    <img src="assets/logo.svg" alt="PS5 Creator" class="splash-logo">
+    <h1 class="splash-title">PS5 <span>Creator</span></h1>
+    <p class="splash-sub">Crie, jogue e compartilhe</p>
+    <div class="loader"><div id="loader-bar"></div></div>
+    <p id="loader-text" class="loader-text">Iniciando...</p>
+  </section>
+
+  <!-- Tela de autenticação (placeholder; será feita na Etapa 2) -->
+  <section id="auth" class="screen">
+    <div class="glow"></div>
+    <img src="assets/logo.svg" alt="" class="auth-logo">
+    <h2>Bem-vindo</h2>
+    <button class="btn primary" id="btn-criar">Criar uma conta</button>
+    <button class="btn ghost" id="btn-entrar">Entrar em uma conta</button>
+    <p class="note">Etapa 2: os botões ainda serão ligados ao sistema de contas.</p>
+  </section>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
