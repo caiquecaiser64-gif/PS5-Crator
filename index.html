@@ -11,7 +11,7 @@
 <body>
 
   <!-- Tela de inicialização -->
-  <section id="splash" class="screen active">
+  <section id="splash" class="screen">
     <div class="glow"></div>
     <img src="assets/logo.svg" alt="PS5 Creator" class="splash-logo">
     <h1 class="splash-title">PS5 <span>Creator</span></h1>
@@ -20,14 +20,46 @@
     <p id="loader-text" class="loader-text">Iniciando...</p>
   </section>
 
-  <!-- Tela de autenticação (placeholder; será feita na Etapa 2) -->
+  <!-- Tela inicial de autenticação -->
   <section id="auth" class="screen">
     <div class="glow"></div>
     <img src="assets/logo.svg" alt="" class="auth-logo">
     <h2>Bem-vindo</h2>
-    <button class="btn primary" id="btn-criar">Criar uma conta</button>
-    <button class="btn ghost" id="btn-entrar">Entrar em uma conta</button>
-    <p class="note">Etapa 2: os botões ainda serão ligados ao sistema de contas.</p>
+    <button class="btn primary" data-go="criar">Criar uma conta</button>
+    <button class="btn ghost" data-go="entrar">Entrar em uma conta</button>
+  </section>
+
+  <!-- Criar conta -->
+  <section id="criar" class="screen">
+    <div class="glow"></div>
+    <img src="assets/logo.svg" alt="" class="auth-logo">
+    <h2>Criar Conta</h2>
+    <input class="field" id="c-user" placeholder="Seu nome" maxlength="20" autocomplete="username">
+    <div class="pass">
+      <input class="field" id="c-pass" type="password" placeholder="Criar senha (10 a 30)" maxlength="30">
+      <button type="button" class="eye" data-target="c-pass">👁</button>
+    </div>
+    <p class="note" id="c-msg">A senha deve ter entre 10 e 30 caracteres.</p>
+    <button class="btn primary" id="c-go">Continuar</button>
+    <button class="btn ghost" data-back>Voltar</button>
+  </section>
+
+  <!-- Entrar em conta -->
+  <section id="entrar" class="screen">
+    <div class="glow"></div>
+    <img src="assets/logo.svg" alt="" class="auth-logo">
+    <h2>Entrar em Conta</h2>
+    <div class="pass">
+      <input class="field" id="e-user" placeholder="Nome da conta" autocomplete="username">
+      <button type="button" class="eye" id="e-search">🔍</button>
+    </div>
+    <div class="pass">
+      <input class="field" id="e-pass" type="password" placeholder="Senha" maxlength="30">
+      <button type="button" class="eye" data-target="e-pass">👁</button>
+    </div>
+    <p class="note" id="e-msg"></p>
+    <button class="btn primary" id="e-go">Entrar</button>
+    <button class="btn ghost" data-back>Voltar</button>
   </section>
 
   <script type="module" src="js/main.js"></script>
