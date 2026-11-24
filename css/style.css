@@ -1,0 +1,46 @@
+:root{
+  --bg:#020816; --blue:#1f7bff; --electric:#2f9bff;
+  --white:#fff; --muted:#9db6e0; --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  background:radial-gradient(120% 90% at 50% 0%,#0a2260 0%,#041036 45%,var(--bg) 100%);
+  color:var(--white); overflow:hidden;
+}
+.screen{
+  position:absolute; inset:0; display:none;
+  flex-direction:column; align-items:center; justify-content:center;
+  padding:24px; gap:14px; text-align:center;
+  opacity:0; transition:opacity .5s ease;
+}
+.screen.active{display:flex}
+.screen.show{opacity:1}
+
+.glow{
+  position:absolute; width:70vmin; height:70vmin; border-radius:50%;
+  background:radial-gradient(circle,rgba(47,155,255,.35),transparent 65%);
+  filter:blur(30px); animation:pulse 3s ease-in-out infinite; z-index:0;
+}
+.screen > *:not(.glow){position:relative; z-index:1}
+
+.splash-logo{width:120px; filter:drop-shadow(0 0 24px rgba(47,155,255,.8)); animation:float 3s ease-in-out infinite}
+.splash-title{font-size:2.2rem; letter-spacing:1px}
+.splash-title span{color:var(--electric)}
+.splash-sub{color:var(--muted); font-size:.95rem}
+
+.loader{width:min(260px,70vw); height:8px; border-radius:99px; background:rgba(255,255,255,.1); overflow:hidden; margin-top:18px}
+#loader-bar{height:100%; width:0%; border-radius:99px; background:linear-gradient(90deg,var(--blue),#8fd3ff); box-shadow:0 0 12px var(--electric); transition:width .2s linear}
+.loader-text{font-size:.8rem; color:var(--muted)}
+
+.auth-logo{width:80px; filter:drop-shadow(0 0 16px rgba(47,155,255,.8))}
+.btn{width:min(320px,85vw); padding:16px; border:0; border-radius:99px; font-size:1.05rem; font-weight:600; color:#fff; cursor:pointer; transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.primary{background:linear-gradient(180deg,#2f8bff,#1457e0); box-shadow:0 0 20px rgba(47,155,255,.45)}
+.btn.ghost{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15)}
+.note{font-size:.75rem; color:var(--muted); max-width:300px}
+
+@keyframes pulse{0%,100%{opacity:.6; transform:scale(1)}50%{opacity:1; transform:scale(1.1)}}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
